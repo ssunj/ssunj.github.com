@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>1纵向下拉目录</title>
+<style>
+/*清零*/
+body,div,ul,li{margin:0;padding:0;}
+ul{list-style-type:none;}
+/*清零结束*/
+li{ border:1px solid #000;width:150px;}
+li ul{	width:150px;
+	    height:0px;
+	    overflow:hidden;}
+li ul li{ background-color:#CCC}
+</style>
+</head>
+<body>
+<ul>
+<li>A<ul>
+<li>Aa</li><li>Ab</li><li>Ac</li>
+</ul></li>
+<li>B<ul>
+<li>Ba</li><li>Bb</li><li>Bc</li>
+</ul></li>
+<li>C<ul>
+<li>Ca</li><li>Cb</li><li>CC</li>
+</ul></li>
+</ul>
+</body>
+<script type="text/javascript">
+window.onload=function(){
+	var ali=document.getElementsByTagName("li");
+	for (var i=0; i <ali.length; i++) {
+		ali[i].onmouseover=function(){aa(this,70);}
+		ali[i].onmouseout=function(){aa(this,0);}
+		}
+}
+function aa(obj,itg){//obj是当前鼠标指向元素，itg是元素将要达到的目标值--
+			var oul=obj.getElementsByTagName('ul')[0];//取出当前li下的ul列表
+			clearInterval(oul.time);//清空定时器
+			oul.time=setInterval(function(){
+				/*定义速度*/
+				if(oul.offsetHeight>itg){speed=-10;}//当前元素高大于目标值 要不断减
+				else{speed=10;}//当前元素高大于目标值 不断增大到200
+				if(oul.offsetHeight == itg){//达到目标时清空定时器
+					clearInterval(oul.time);
+				}else{
+					oul.style.height=oul.offsetHeight+speed+"px";}
+			},30)
+}
+
+</script>
+</html>
