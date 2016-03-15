@@ -9,7 +9,7 @@ ul,ol{ list-style:none}
 a{ text-decoration:none; color:#000}
 /*清零结束*/
 /*共用*/
-body{ background-image: url(../images/header_bg.jpg); background-color:#ffffcc;}
+body{background:url(../images/header_bg.jpg) no-repeat; background-color:#ffffcc;}
 /*共用结束*/
 /*头部*/
 #header{ width:100%;height:20%;position:absolute;}
