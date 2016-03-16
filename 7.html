@@ -3,8 +3,62 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>7变色等</title>
+<style type="text/css" >
+/*清零*/
+body,div,ul,li{margin:0;padding:0;}
+ul{list-style-type:none; }
+/*清零结束*/
+body{text-align:center;}
+div{
+	border:3px solid black;width:100px;height:100px;
+display:inline-block; line-height:100px; margin:10px;}
+li{ //width:0px; //height:0px; display:block; //overflow:hidden; position:relative;top:0px;left:0px;}
+
+</style>
 </head>
 
 <body>
+<div>我是盒子1</div>
+<div>我是盒子2</div>
+<div>我是盒子3</div>
+<br/>
+<input type="button" value="盒子变宽" />
+<input type="button" value="盒子变高" />
+<input type="button" value="盒子变色" />
+<!--<ul> <li>red</li><li>blue</li></ul>
+将要填完坑-->
+<input type="button" value="盒子消失" />
+<input type="button" value="盒子变回原来的样子" />
+
 </body>
+<script type="text/javascript">
+window.onload=function(){
+	var odiv=document.getElementsByTagName('div');
+	var obtn=document.getElementsByTagName('input');
+		for(var i=0;i<obtn.length;i++){
+			obtn[i].onclick=function(){
+				if(this.value=="盒子变宽"){changex('width','offsetWidth',4)}
+			  		else if(this.value=="盒子变高"){ changex('height','offsetHeight',4);}
+			 			 else if(this.value=="盒子变色"){changey('backgroundColor','red');}
+			  				else if(this.value=="盒子消失"){changey('display','none');}
+			 					 else{changey('display','inline-block','true');}
+			}
+		}
+}
+
+function changex(attr,oHeight,itarget){
+	var odiv=document.getElementsByTagName('div');
+		for(var p in odiv){
+			odiv[p].style[attr]=odiv[p][oHeight]+itarget+"px";}
+}
+function changey(attr,itarget,fn){
+	var odiv=document.getElementsByTagName('div');
+		for(var p in odiv){
+			odiv[p].style[attr]=itarget;
+				if(fn){		
+					odiv[p].style.cssText="";}
+		}
+}
+//给自己挖的坑，之后完成选择盒子，选择变那个颜色，选择多宽多高！
+</script>
 </html>
