@@ -2,23 +2,27 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>some demo</title>
+    <title>简历</title>
 </head>
 <!-- 全局样式 -->
-<link rel="stylesheet" href="/css/style.css">
-<!-- 引入jquery -->
-<!-- <script src="/lib/jquery-1.7.2.js"></script> -->
+<link rel="stylesheet" href="src/assets/css/style.css">
 <!-- 调试专用js -->
-<script src="/lib/dump.js"></script>
+<!-- <script src="lib/dump.js"></script> -->
+<script src="https://unpkg.com/vue"></script>
 
-<script src="/js/indexController.js"></script>
+<script type="text/javascript">
 
-<body class="index">
-    <!-- <a href="/html/jquerymobile/index.html" class="btn">jquerymobile Demo</a> -->
-
-    <!-- <a href="/html/jquerymobile/index.html" class="btn">表格处理</a> -->
-	Think about what to do
-    <!-- <canvas id="canvas" style="position:absolute;top:0px;left:0px;z-index:1;"></canvas>   -->
+if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+	window.location.href = "src/page/index-mobile/index.html";
+} else {
+	window.location.href = "src/page/index-pc/index.html";
+}
+</script>
+<body >
+	<a href="src/assets/js/index.js" class="btn">jquerymobile Demo</a>
 </body>
 
+
 </html>
+
+

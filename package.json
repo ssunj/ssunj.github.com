@@ -1,0 +1,27 @@
+{
+  "name": "ssunjgithubcom",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-connect": "^5.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ssunj/ssunj.github.com.git"
+  },
+  "keywords": [
+    "0321"
+  ],
+  "author": "sunjing",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ssunj/ssunj.github.com/issues"
+  },
+  "homepage": "https://github.com/ssunj/ssunj.github.com#readme"
+}
